@@ -24,7 +24,9 @@ FROM customer_purchases
 WHERE product_id IN (4, 9);
 
 -- option 2
-
+SELECT *
+FROM customer_purchases
+WHERE product_id = '4' OR product_id = '9';
 
 
 /*2. Write a query that returns all customer purchases and a new calculated column 'price' (quantity * cost_to_customer_per_qty), 
