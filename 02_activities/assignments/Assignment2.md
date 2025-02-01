@@ -55,7 +55,7 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 
 ```
 Your answer...
-```
+Type 1 is overwrite architecture where each customer's address information and previous data is overwritten with new information. This method will not retain historical address data. Type 2 is a retain changes architecture where a new record is created for each customer's address when they change or update their address. This will allow keeping previous data on addresses.
 
 ***
 
