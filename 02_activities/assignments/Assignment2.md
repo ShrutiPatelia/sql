@@ -55,7 +55,34 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 
 ```
 Your answer...
-Type 1 is overwrite architecture where each customer's address information and previous data is overwritten with new information. This method will not retain historical address data. Type 2 is a retain changes architecture where a new record is created for each customer's address when they change or update their address. This will allow keeping previous data on addresses.
+Type 1 is overwriting architecture where each customer's address information and previous data is overwritten with new information. This method will not retain historical address data. 
+
+Type 1 Table
+
+Customer_address
+Customer_ID
+Address
+City
+Province_or_State
+Area_code
+Country
+
+Type 2 is a retain changes architecture where a new record is created for each customer's address when they change or update their address. This will allow keeping previous data on addresses. The ‘IsCurrent’ and ‘last_updated’ columns help identify the customer’s current address.
+
+Type 2 Table
+
+Customer_address	
+Customer_ID	FK
+Address	
+City	
+Province_or_State	
+Area_code	
+Country	
+Initial_entry	 Date when address was entered in the system
+Last_updated	Date when the address was updated
+IsCurrent	Flag indicating if the address is the current one
+
+
 
 ***
 
@@ -184,3 +211,4 @@ Consider, for example, concepts of labour, bias, LLM proliferation, moderating c
 ```
 Your thoughts...
 ```
+This article was very interesting because it highlighted that developing an objective tool first requires a human being to encoding into the system; however, humans are riddled with biases and preconceived notions that are often internally embedded and difficult to recognize as prejudice. The article proposed that neural networks, similar to human beings, learn from data, make predictions, and adjust their understanding based on feedback. As a result, the initial stage of development results in including or ‘sewing in’ biases within artificial intelligence that are also present among humans. This parallel compels us to consider the limitations and ethical challenges when developing neural network-based technologies. For instance, the initial taxonomy from training data in neural networks could reinforce societal inequalities in areas such as policing, hiring, and healthcare, where the system is replicating systemic prejudice by ‘thinking like people’. In addition, biases in training data that uses previous policing data may over target marginalized communities due to historical over-policing. Moreover, an AI based hiring model may perpetuate a notion that male police officers should be ranked higher than female officers leading to less applicants. Biases are also sewed in large language models such as ChatGPT and Google Gemini, which includes uses internet text that contain stereotypes, misinformation and discriminatory narratives. As a result, when humans use these domains that ‘fact-check’ machines or as the initial step for insight on a given topic they are exposing themselves to these biases.  
